@@ -1,0 +1,56 @@
+/out
+/bin
+idea
+/wrapper
+/lib
+/idea-target
+target
+/build
+.gradle
+.DS_Store
+.classpath
+.project
+.settings
+*.iml
+.idea
+*.war
+/grailsw
+/grailsw.bat
+/web-app/WEB-INF
+
+# .gitignore for Grails 1.2 and 1.3
+
+# web application files
+/web-app/WEB-INF/classes
+
+# default HSQL database files for production mode
+/prodDb.*
+
+# general HSQL database files
+*Db.properties
+*Db.script
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+
+# project release file
+/*.war
+
+# plugin release files
+/*.zip
+/plugin.xml
+
+# older plugin install locations
+/plugins
+/web-app/plugins
+
+# "temporary" build files
+/target
+
+application.conf
+
+grails-app/conf/app-config.properties
+
+grails-app/conf/app-config-development.properties
