@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="webbuttonApp" id="ng-app" lang="en">
+<head>
+
+    <title ng-bind="'myApp &mdash; ' + title">WebPhone - Demo</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+
+    <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="styles/webbuttonstyles.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        var protocol = "no-protocol";
+        var codec = "no-codec";
+        var server = "no-server";
+        var port = "no-port";
+
+        function launchWebButtonPhone(){
+
+            var options = {
+                height: 400, // sets the height in pixels of the window.
+                width: 340, // sets the width in pixels of the window.
+                toolbar: 0, // determines whether a toolbar (includes the forward and back buttons) is displayed {1 (YES) or 0 (NO)}.
+                scrollbars: 0, // determines whether scrollbars appear on the window {1 (YES) or 0 (NO)}.
+                status: 0, // whether a status line appears at the bottom of the window {1 (YES) or 0 (NO)}.
+                resizable: 0, // whether the window can be resized {1 (YES) or 0 (NO)}. Can also be overloaded using resizable.
+                left: 0, // left position when the window appears.
+                top: 0, // top position when the window appears.
+                center: 0, // should we center the window? {1 (YES) or 0 (NO)}. overrides top and left
+                createnew: 0, // should we create a new window for each occurance {1 (YES) or 0 (NO)}.
+                location: 0, // determines whether the address bar is displayed {1 (YES) or 0 (NO)}.
+                menubar: 0 // determines whether the menu bar is displayed {1 (YES) or 0 (NO)}.
+            };
+
+            var parameters = "location=" + options.location +
+                    ",menubar=" + options.menubar +
+                    ",height=" + options.height +
+                    ",width=" + options.width +
+                    ",toolbar=" + options.toolbar +
+                    ",scrollbars=" + options.scrollbars +
+                    ",status=" + options.status +
+                    ",resizable=" + options.resizable +
+                    ",left=" + options.left +
+                    ",screenX=" + options.left +
+                    ",top=" + options.top +
+                    ",screenY=" + options.top;
+
+            window.open('WebRTC.html?ringToAddress=' + $("#ringToAddress").val() +
+            '&protocol=' + $('#protocol').val() + '&codec=' + $('#codec').val() + '&server=' + $('#server').val() + '&port=' + $('#port').val(),'',parameters);
+            console.log("PROTOCOL: " + $('#protocol').val());
+            console.log("CODEC: " + $('#codec').val());
+            console.log("SERVER: " + $('#server').val());
+            console.log("PORT: " + $('#port').val());
+        }
+
+
+    </script>
+
+    <style>
+        body{ overflow-x:hidden;overflow-y:hidden; }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container" style="margin: 5px;  ">
+
+    <button class="btn btn-primary" onclick='launchWebButtonPhone();'>WebRTC Demo</button>
+
+    <label for="ringToAddress">Dial Number</label>
+    <input id="ringToAddress" type="text" value="8675309" />
+    <br >   <br >
+
+    <div class="btn-group">
+	  <div>
+	  <label for="protocol">Protocol</label>
+
+	  <select id="protocol" name="protocol">
+		<option value="webrtc">WebRTC</option>
+		<option value="flash">Flash</option>
+	  </select>
+    	  </div>
+	  <div>
+	  <label for="codec">Codec</label>
+          <select  id="codec" name="codec" >
+                <option value="g711">G.711</option>
+                <option value="g729">G.729</option>
+                <option value="opus">OPUS</option>
+                <option value="speex">SPEEX</option>
+          </select>
+	  </div>
+	  <div>
+	  <label for="server">Server:</label>
+	  <select  id="serversuggest" name="serversuggest" onchange="$('#server').val(this.value)">
+          <option value="192.168.20.8">Home - Dev</option>
+          <option value="68.5.232.78">Home - Public</option>
+          <option value="192.168.20.2">Home - Private</option>
+      </select>
+	  <div><input type="text" name="server" id="server" value="192.168.20.8"></div>
+	  </div>
+	  <div>
+          <label for="port">Port</label>
+	  <select id="portsuggest" name="portsuggest" onchange="$('#port').val(this.value)">
+                <option>5066</option>
+                <option>443</option>
+                <option>1935</option>          
+	  </select>
+          <div><input type="text" name="port" id="port" value="5066"></div>
+	  </div>
+	 
+	</div>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

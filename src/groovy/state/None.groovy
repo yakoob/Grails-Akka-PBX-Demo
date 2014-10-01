@@ -1,0 +1,7 @@
+package state
+
+
+class None {
+
+
+}

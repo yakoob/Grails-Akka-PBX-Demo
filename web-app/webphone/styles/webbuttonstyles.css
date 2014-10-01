@@ -1,0 +1,98 @@
+.microphoneSettingsDiv {
+    border: 1px solid black;
+    display: inline-block;
+    width: 250px;
+}
+.microphoneSettingsDiv.opened > .body { display: block; }
+.microphoneSettingsDiv.closed > .body { display: none; }
+.microphoneSettingsDiv > .title {
+    background-color: black;
+    color: white;
+    padding: .1em .3em;
+    cursor: pointer;
+}
+.microphoneSettingsDiv > .body {
+    padding: .1em .3em;
+}
+
+.webbuttonapp_visible { display: block; }
+.webbuttonapp_hidden { display: none; }
+
+.microphoneIconLeft {
+    background-image: url("../assets/images/microphone-large.png");
+    padding-left:120px;
+    height:170px;
+    background-repeat: no-repeat;
+}
+
+.microphoneAccessDenied {
+    background-image: url("../assets/images/stop.png");
+    padding-left:140px;
+    height:170px;
+    background-repeat: no-repeat;
+}
+
+.phoneCallIcon {
+    background-image: url("../assets/images/phone.png");
+    padding-left:140px;
+    height:130px;
+    float:left;
+    background-repeat: no-repeat;
+}
+
+.outboundControllerContent {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outboundController_controlButton {
+    margin: 3px;
+    width: 100px;
+}
+
+.outboundController_controlButton li {
+    margin: 3px;
+}
+
+.keyPadButton {
+    height: 40px;
+    width: 70px;
+    font-size: 9px;
+    padding:5px;
+    margin: 1px;
+}
+
+.keyPadStyles {
+    padding:5px;
+}
+
+body {
+    overflow:hidden;
+    padding:0px;
+}
+
+.outboundController_title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+hr {
+    height: 1px;
+}
+
+.horizontalRule {
+    min-height: 1px;
+    clear:both; width:100%;
+    border-bottom:1px solid #d1d1d1;
+    height:1px; padding-top:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+div {
+    font-size: 10px;
+}
+
+.webbuttonapp_hidden { display: none; }

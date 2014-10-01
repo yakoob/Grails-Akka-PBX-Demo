@@ -1,0 +1,13 @@
+{
+  "serverList": [
+    { "name":"ServerA",
+      "testURL":"http://alc-fsw24.ifn.com/image/expanded.gif"
+    },
+    { "name":"ServerB",
+      "testURL":"http://hkg-fsw167.ifn.com/image/expanded.gif"
+    },
+    { "name":"ServerC",
+      "testURL":"http://syd-blade12.ifn.com/image/expanded.gif"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="webbuttonApp" id="ng-app" lang="en">
+<head>
+
+    <title ng-bind="'myApp &mdash; ' + title">myApp</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="libs/angularjs/loader.js"></script>
+    <script>
+        setupModuleLoader(window);
+    </script>
+
+    <!--[if lte IE 8]>
+    <script src="app/json2.js"></script>
+
+    <script type="text/javascript">
+        var console = {};
+        console.log = function (message) {
+
+            try {
+                if (document.getElementById("logger") != null) {
+                    document.getElementById("logger").innerHTML += message + "<br>";
+                }
+            } catch (e) {
+            }
+        };
+
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+    </script>
+
+    <![endif]-->
+
+
+
+    <script src="libs/translate/translate.js"></script>
+    <script src="libs/translate/translate-loader-url.js"></script>
+    <script src="app/WebButtonApp.js"></script>
+    <script src="app/controllers/outboundController.js"></script>
+    <script src="app/services/EcoClientService.js"></script>
+    <script src="app/services/EcoFlashClient.js"></script>
+    <script src="app/services/EcoRTCSIPClient.js"></script>
+    <script src="app/services/jssip-0.3.0.js"></script>
+    <script src="app/services/custom.js"></script>
+
+    <script src="libs/angularjs/ngCookies/cookies.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js"></script>
+    <script src="app/swfobject.js"></script>
+    <script src="app/services/webrtcsupport.bundle.js"> </script>
+
+    <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="styles/webbuttonstyles.css" rel="stylesheet">
+
+    <script src="libs/angularjs/ngSanitize/sanitize.js"></script>
+    <script src="libs/angularjs/ngSanitize/directive/ngBindHtml.js"></script>
+
+</head>
+
+<body ng-controller="WebAppController" ng-show="true">
+
+<div class="container-fluid  well well-large" style="margin: 2px; height:400px;">
+
+   <viewstack active-content="MicConfigContent" class="row-fluid"  >
+
+         <div class="outboundDirective" id="OutboundCallContent"   ng-controller="OutboundController" >
+             outbound content
+         </div>
+
+
+   </viewstack>
+
+    <div style="text-align: center !important; margin-left: auto; margin-right: auto; width: 320px;">
+
+      <div id='flashContent' ></div>
+
+    </div>
+
+
+</div>
+
+<div id="webcam">
+        <video id="remoteView" autoplay hidden=true></video>
+        <video id="selfView" autoplay muted="true" hidden=true></video>
+</div>
+
+<div id="logger" style=" clear:both; margin-top:300px; border: solid 1px;  overflow:scroll;" ></div>
+
+</body>
+
+</html>
